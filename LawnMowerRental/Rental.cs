@@ -9,7 +9,6 @@ namespace LawnMowerRental
 {
     public class Rental
     {
-
         public int RentalId { get; set; }
         public int nextId = 0;
         public DateTime RentalDate { get; set; }
@@ -18,14 +17,22 @@ namespace LawnMowerRental
         public Mower mower { get; set; }
         
         public Rental() { }
-        public Rental(DateTime rentalDate, DateTime returnDate, int customerId, int mowerId)
+        /*
+        public Rental(DateTime rentalDate, DateTime returnDate, int customerId, int RentedMowerId)
         {
             RentalDate = rentalDate;
             ReturnDate = returnDate;
             customerId = customer.CustomerId;
-            mowerId = mower.MowerId;
+            RentedMowerId = mower.MowerId;
         }
-
+        */
+        public Rental(DateTime rentalDate, DateTime returnDate, Customer customerId, Mower mowerId)
+        {
+            RentalDate = rentalDate;
+            ReturnDate = returnDate;
+            customer = customerId;
+            mower = mowerId;
+        }
         public void RentMower()
         {
             Console.WriteLine("Rent a Lawn Mower.");
@@ -41,17 +48,20 @@ namespace LawnMowerRental
                 return;
             }
             Console.WriteLine("Enter the mower Id.");
-            int mowerId = Convert.ToInt32(Console.ReadLine());
+             int RentedMowerId = Convert.ToInt32(Console.ReadLine());
 
-            List<Mower> mowers = new List<Mower>();
 
-            Mower mower = new Mower();
-
-            if (mower.Availability == false)
+            /*
+            Mower mower = new Mower() { MowerId = 1, MowerModel = "HUSQVARNA LB 448S KLIPPO™", Availability = true, Price = 250 };
+            RentedMowerId = mower.MowerId;
+            */
+             
+            if (Mower.FindAvailableLawnMower(mowerId))
             {
-                Console.WriteLine($"The lawn mawer with the Id {mowerId} is not available. Please enter another mower Id");
+                Console.WriteLine($"The lawn mawer with the Id {RentedMowerId} is not available. Please enter another mower Id");
                 return;
             }
+            
 
             Console.WriteLine("Enter the rent date.");
             DateTime RentalDate = Convert.ToDateTime(Console.ReadLine());
@@ -67,8 +77,6 @@ namespace LawnMowerRental
 
             Console.WriteLine($"The Rental Id is: {nextId++}");
             Console.WriteLine("The rent is registered successfully");
-
-
 
         }
     }

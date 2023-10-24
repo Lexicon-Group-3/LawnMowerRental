@@ -92,7 +92,7 @@ public class Program
 
     public static void DisplayMenu()
     {
-        Console.WriteLine("Lawn Mower Rental System");
+        Console.WriteLine("\nLawn Mower Rental System");
         Console.WriteLine("1. Add a new customer");
         Console.WriteLine("2. Register a new rental");
         Console.WriteLine("3. Display the list of customers");

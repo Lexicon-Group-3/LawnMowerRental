@@ -27,11 +27,7 @@ namespace LawnMowerRental
 
 
         }
-        
-
-        public  void AvailableLawnMowers()
-        {
-            List<Mower> mowers = new List<Mower>
+        List<Mower> mowers = new List<Mower>
         {
             new Mower() { MowerId = 1, MowerModel = "HUSQVARNA LB 448S KLIPPO™", Availability = true, Price = 250 },
             new Mower() { MowerId = 2, MowerModel = "HUSQVARNA LB 448S KLIPPO™", Availability = false, Price = 250 },
@@ -49,6 +45,10 @@ namespace LawnMowerRental
             new Mower() { MowerId = 14, MowerModel = "HUSQVARNA LB 448S KLIPPO™", Availability = true, Price = 250 },
             new Mower() { MowerId = 15, MowerModel = "HUSQVARNA LB 448S KLIPPO™", Availability = false, Price = 250 }
         };
+
+        public  void AvailableLawnMowers()
+        {
+          
            
             var availableMowers = mowers.Where(mower => mower.Availability)
                 .ToList();
@@ -60,11 +60,13 @@ namespace LawnMowerRental
             }
 
         }
-        static Mower FindAvailableLawnMower(int mowerId)
+        
+        public Mower FindAvailableLawnMower(int mowerId)
         {
             return mowers.FirstOrDefault(m => m.MowerId == mowerId && m.Availability == true);
         }
+        
     }   
 
 
-    }
+ }
