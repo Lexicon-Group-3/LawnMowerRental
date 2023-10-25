@@ -15,10 +15,34 @@ namespace LawnMowerRental
             BonusPoints = 0;
         }
 
-        
+
         public void AddBonusPoints(int rentalCost)
         {
+
             BonusPoints += rentalCost;
         }
+
+        public void DisplayBonusPoints(string customerId)
+        {
+            
+
+            if (Exists(customerId))
+            {
+                Customer customer = new Customer();
+                if (customer is PrimeCustomer primeCustomer)
+                {
+                    Console.WriteLine($"Customer with the ID: {customerId}) has {primeCustomer.BonusPoints} bonus points.");
+                }
+                else
+                {
+                    Console.WriteLine("Customer is not a PrimeCustomer.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Customer not found.");
+            }
+
+        }
     }
-}
+ }

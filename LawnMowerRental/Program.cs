@@ -12,6 +12,8 @@ public class Program
         Customer customerInstance = new Customer();
         Rental rental = new Rental();
         Mower mower = new Mower();
+        PrimeCustomer primeCustomer = new PrimeCustomer("", "", "", "", "");
+        
 
         bool exitRequested = false;
 
@@ -49,8 +51,10 @@ public class Program
                         break;
 
                     case 6:
-
-
+                        Console.WriteLine("Enter the customer Id.");
+                        string id = Console.ReadLine();
+                        primeCustomer.DisplayBonusPoints(id);
+                        break;
                     case 7:
                         exitRequested = true;
                         Console.WriteLine("Exiting the app.");

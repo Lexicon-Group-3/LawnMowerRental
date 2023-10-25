@@ -49,7 +49,7 @@ namespace LawnMowerRental
             Console.WriteLine("Is the customer basic or prime?");
             string type = Console.ReadLine();
 
-            if (Exists(customerId))
+            if (Exists(customers, customerId))
             {
                 Console.WriteLine("The customer is already registered.");
                 return; 
