@@ -38,11 +38,9 @@ public class Program
                         break;
                         /*
                     case 3:
-                        customerInstance.ListCustomers();
                         break;
 
                     case 4:
-                        customerInstance.ListCustomersWithRentals();
                         break;
                         */
                     case 5:
@@ -51,6 +49,9 @@ public class Program
                         break;
 
                     case 6:
+
+
+                    case 7:
                         exitRequested = true;
                         Console.WriteLine("Exiting the app.");
                         break;
@@ -98,7 +99,8 @@ public class Program
         Console.WriteLine("3. Display the list of customers");
         Console.WriteLine("4. Display the list of customers with rentals");
         Console.WriteLine("5. Display available Lawn Mowers in stock");
-        Console.WriteLine("6. Exit the app");
+        Console.WriteLine("6. Display the status of the customer");
+        Console.WriteLine("7. Exit the app");
         Console.WriteLine("Enter an option:");
     }
 }
