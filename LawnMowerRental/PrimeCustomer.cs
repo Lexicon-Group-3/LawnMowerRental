@@ -16,10 +16,12 @@ namespace LawnMowerRental
         }
 
 
-        public void AddBonusPoints(int rentalCost)
+        public void AddBonusPoints(/*int rentalCost*/)
         {
 
-            BonusPoints += rentalCost;
+            Rental rentalInstance = new Rental();
+
+            BonusPoints += rentalInstance.Rentalcost();
         }
 
         public void DisplayBonusPoints(string customerId)
@@ -35,7 +37,7 @@ namespace LawnMowerRental
                 }
                 else
                 {
-                    Console.WriteLine("Customer is not a PrimeCustomer.");
+                    Console.WriteLine("Customer is not a Prime Customer.");
                 }
             }
             else
@@ -44,5 +46,6 @@ namespace LawnMowerRental
             }
 
         }
+        
     }
  }
