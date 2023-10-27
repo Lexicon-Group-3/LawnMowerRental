@@ -71,9 +71,11 @@ namespace LawnMowerRental
             Console.WriteLine("The rent is registered successfully");
 
         }
-        public int Rentalcost(int mowerId)
+        public int Rentalcost()
         {
-            Mower mower = Mowers.Find(m => m.MowerId == mowerId);
+            Console.WriteLine("Enter the rented mower Id.");
+            int input = Convert.ToInt32(Console.ReadLine());
+            Mower mower = Mowers.Find(m => m.MowerId == input);
             if( mower != null)
             {
                 Console.WriteLine("enter the number of the days rented: ");
@@ -87,6 +89,5 @@ namespace LawnMowerRental
                 return 0;
             }
         }
-
     }
 }
