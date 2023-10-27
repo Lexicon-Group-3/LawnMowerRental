@@ -81,6 +81,7 @@ namespace LawnMowerRental
                 Console.WriteLine("enter the number of the days rented: ");
                 int rentalDays = Convert.ToInt32(Console.ReadLine());
                 int rentalcost = rentalDays * mower.Price;
+                Console.WriteLine($"The rental cost is: {rentalcost}");
                 return rentalcost;
             }
             else

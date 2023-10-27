@@ -13,7 +13,8 @@ public class Program
         Rental rental = new Rental();
         Mower mower = new Mower();
         PrimeCustomer primeCustomer = new PrimeCustomer("", "", "", "", "");
-        
+
+
 
         bool exitRequested = false;
 
@@ -38,10 +39,11 @@ public class Program
                     case 2:
                         rental.RentMower();
                         break;
-                        /*
+                        
                     case 3:
+                        rental.Rentalcost();
                         break;
-
+                        /*
                     case 4:
                         break;
                         */
